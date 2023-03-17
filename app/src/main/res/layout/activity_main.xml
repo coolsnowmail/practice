@@ -10,8 +10,12 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="84dp"
+        android:background="#6C4C4C"
         android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -35,11 +39,26 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <FrameLayout
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="73dp"
+        android:layout_marginTop="8dp"
         android:background="#B16060"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="129dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="52dp"
+        android:alwaysDrawnWithCache="false"
+        android:background="#67A9C6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintWidth_percent="0.5">
 
     </FrameLayout>
 
