@@ -6,60 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="84dp"
-        android:background="#6C4C4C"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
-        android:visibility="visible"
+
+    <FrameLayout
+        android:id="@+id/title"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:background="#7C4DFF"
+        app:layout_constraintBottom_toTopOf="@id/top_barrier"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_chainStyle="spread" />
 
-    <Button
-        android:id="@+id/button"
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/top_barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/switch1"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="button1,button2,button3" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <FrameLayout
+        android:id="@+id/button1"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:background="#FFD900"
+        app:layout_constraintBottom_toTopOf="@id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+
+    <FrameLayout
+        android:id="@+id/button2"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="25dp"
+        android:background="#FFD900"
+        app:layout_constraintBottom_toTopOf="@id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <FrameLayout
+        android:id="@+id/button3"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="25dp"
+        android:background="#FFD900"
+        app:layout_constraintBottom_toTopOf="@id/box1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button2"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bottom_barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:minHeight="48dp"
-        android:text="Switch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="button1,button2,button3" />
 
     <FrameLayout
+        android:id="@+id/box1"
         android:layout_width="0dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="8dp"
-        android:background="#B16060"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#69F0AE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/box2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@id/bottom_barrier"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <FrameLayout
+        android:id="@+id/box2"
         android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="52dp"
-        android:alwaysDrawnWithCache="false"
-        android:background="#67A9C6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintWidth_percent="0.5">
-
-    </FrameLayout>
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_weight="50"
+        android:background="#69F0AE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/box1"
+        app:layout_constraintTop_toTopOf="@id/box1"
+        app:layout_constraintVertical_chainStyle="spread" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
